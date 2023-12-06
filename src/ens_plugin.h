@@ -222,4 +222,6 @@ typedef struct context_t {
 
 // Piece of code that will check that the above structure is not bigger than 5 * 32. Do not remove
 // this check.
+#ifndef BUILDING_FUZZER
 _Static_assert(sizeof(context_t) <= 5 * 32, "Structure of parameters too big.");
+#endif
